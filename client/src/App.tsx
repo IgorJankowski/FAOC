@@ -10,7 +10,6 @@ function App() {
         const fetchData = async () => {
             const response = await fetch("http://localhost:5000/api");
 
-            // Check for response status
             if (!response.ok) {
                 throw new Error(`Error: ${response.statusText}`);
             }

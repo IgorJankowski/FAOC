@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import HomeView from "./views/HomeView/HomeView";
 
 interface mockDataModel {
     users: string[];
@@ -20,7 +21,11 @@ function App() {
         fetchData();
     }, []);
 
-    return <div>{mock?.users}</div>;
+    return (
+        <div className="container-lg">
+            <HomeView />
+        </div>
+    );
 }
 
 export default App;

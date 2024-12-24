@@ -1,8 +1,4 @@
-export interface TableComponentProps<T> {
-    items: T[];
-    tableHeaders: string[];
-    alignLeft?: boolean;
-}
+import { TableComponentProps } from "./TableComponentTypes";
 
 export default function TableComponent<T>({
     items,

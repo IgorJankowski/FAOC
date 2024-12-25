@@ -5,10 +5,10 @@ export default function TableComponent({
     tableHeaders,
 }: TableComponentProps) {
     return (
-        <table className="table table-striped table-hover table-bordered w-100">
+        <table className="table table-striped table-hover table-bordered no-top-border w-100">
             <thead>
                 {tableHeaders.map((header) => (
-                    <th>{header}</th>
+                    <th className="no-top-border">{header}</th>
                 ))}
             </thead>
             <tbody>{children}</tbody>

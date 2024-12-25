@@ -1,24 +1,17 @@
 import { TableComponentProps } from "./TableComponentTypes";
 
-export default function TableComponent<T>({
-    items,
+export default function TableComponent({
+    children,
     tableHeaders,
-    alignLeft = false,
-}: TableComponentProps<T>) {
+}: TableComponentProps) {
     return (
-        <table>
+        <table className="table table-striped table-hover table-bordered w-100">
             <thead>
                 {tableHeaders.map((header) => (
                     <th>{header}</th>
                 ))}
             </thead>
-            <tbody>
-                {items.map((item) => (
-                    <tr></tr>
-                ))}
-            </tbody>
-            {/* <tfoot> not sure if i'll be using it for now
-            </tfoot> */}
+            <tbody>{children}</tbody>
         </table>
     );
 }

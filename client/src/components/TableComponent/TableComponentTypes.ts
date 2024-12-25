@@ -1,5 +1,6 @@
-export interface TableComponentProps<T> {
-    items: T[];
+import { ReactNode } from "react";
+
+export interface TableComponentProps {
+    children: ReactNode;
     tableHeaders: string[];
-    alignLeft?: boolean;
 }

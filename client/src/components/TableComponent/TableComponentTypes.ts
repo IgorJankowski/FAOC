@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 
-export interface TableComponentProps {
-    children: ReactNode;
+export interface TableComponentProps<T> {
+    tableItems: T[];
     tableHeaders: string[];
+    children?: ReactNode;
+    useChildrenContent?: boolean;
 }

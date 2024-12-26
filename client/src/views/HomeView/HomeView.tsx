@@ -13,15 +13,11 @@ export default function HomeView() {
     };
     return (
         <div className="container-lg">
-            <TableComponent tableHeaders={mock.tableHeaders}>
-                {mock.tableItems.map((item) => (
-                    <tr>
-                        <th>{item.name}</th>
-                        <th>{item.id}</th>
-                        <th>{item.amount}</th>
-                        <th>{item.profit}</th>
-                    </tr>
-                ))}
+            <TableComponent
+                tableHeaders={mock.tableHeaders}
+                tableItems={mock.tableItems}
+            >
+                abc
             </TableComponent>
         </div>
     );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeView from "./views/HomeView/HomeView";
-import CreateEditView from "./views/CreateEditStockRecords/CreateEditStockRecords";
+import CreateEditStockRecords from "./views/CreateEditStockRecords/CreateEditStockRecords";
 
 interface mockDataModel {
     users: string[];
@@ -24,9 +24,17 @@ function App() {
     }, []);
 
     return (
-        <div className="container-lg">
-            <HomeView />
-        </div>
+        <BrowserRouter>
+            <div className="container-lg">
+                <Routes>
+                    <Route path="/" element={<HomeView />} />
+                    <Route
+                        path="/CreateEditStockRecords"
+                        element={<CreateEditStockRecords />}
+                    />
+                </Routes>
+            </div>
+        </BrowserRouter>
     );
 }
 

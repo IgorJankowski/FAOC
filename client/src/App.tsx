@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeView from "./views/HomeView/HomeView";
+import CreateEditView from "./views/CreateEditStockRecords/CreateEditStockRecords";
 
 interface mockDataModel {
     users: string[];

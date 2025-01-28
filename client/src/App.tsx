@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeView from "./views/HomeView/HomeView";
-import CreateEditStockRecords from "./views/CreateEditStockRecords/CreateEditStockRecords";
 
 interface mockDataModel {
     users: string[];
@@ -28,10 +27,6 @@ function App() {
             <div className="container-lg">
                 <Routes>
                     <Route path="/" element={<HomeView />} />
-                    <Route
-                        path="/CreateEditStockRecords"
-                        element={<CreateEditStockRecords />}
-                    />
                 </Routes>
             </div>
         </BrowserRouter>

@@ -16,7 +16,7 @@ export default function HomeView() {
         { name: "Diana", id: 4, amount: 400, profit: 40 },
         { name: "Eve", id: 5, amount: 600, profit: 60 },
     ]);
-    const tableHeaders = ["name", "id", "amount", "profit"];
+    const tableHeaders = ["name", "id", "amount", "profit", "options"];
 
     return (
         <div className="container-lg">

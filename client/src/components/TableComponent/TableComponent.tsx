@@ -2,6 +2,8 @@ import { TableComponentProps } from "./TableComponentTypes";
 import { useState } from "react";
 import AddStockModal from "../../modals/AddStockModal/AddStockModal";
 import { TableRecordModel } from "../../views/HomeView/HomeView";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function TableComponent({
     tableItems,
@@ -15,13 +17,24 @@ export default function TableComponent({
         onAddRecord([...tableItems, newRecord]);
     };
 
+    const deleteRow = (id: number) => {
+        onAddRecord([...tableItems.filter((x) => x.id !== id)]);
+    };
+
     return (
         <div className="d-flex flex-column align-items-end">
             <table className="table table-striped table-hover table-bordered no-top-border w-100 mb-1">
                 <thead>
-                    {tableHeaders.map((header) => (
-                        <th className="no-top-border">{header}</th>
-                    ))}
+                    <tr>
+                        {tableHeaders.map((header, index) => (
+                            <th
+                                className="no-top-border"
+                                key={`${header}-${index}`}
+                            >
+                                {header}
+                            </th>
+                        ))}
+                    </tr>
                 </thead>
                 <tbody>
                     {children && useChildrenContent
@@ -31,6 +44,24 @@ export default function TableComponent({
                                   {Object.entries(item).map(([key, value]) => (
                                       <td key={key}>{value}</td>
                                   ))}
+                                  <td>
+                                      <button
+                                          onClick={() => deleteRow(item.id)}
+                                          style={{
+                                              border: "none",
+                                              background: "transparent",
+                                              cursor: "pointer",
+                                          }}
+                                      >
+                                          <FontAwesomeIcon
+                                              icon={faTrash}
+                                              style={{
+                                                  color: "red",
+                                                  fontSize: "20px",
+                                              }}
+                                          />
+                                      </button>
+                                  </td>
                               </tr>
                           ))}
                 </tbody>

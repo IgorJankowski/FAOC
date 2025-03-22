@@ -20,7 +20,7 @@ export default function HomeView() {
 
     return (
         <div className="container-lg">
-            Home agaes
+            Home page
             <TableComponent
                 tableHeaders={tableHeaders}
                 tableItems={tableData}
